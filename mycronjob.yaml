@@ -1,0 +1,15 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cron1
+  namespace: 1stnamespace
+  labels:
+    app: app1
+    env: dev
+    team: paris
+spec: 
+  schedule: "0 23 * * 0-5"
+  jobTemplate:
+    metadata:
+      
