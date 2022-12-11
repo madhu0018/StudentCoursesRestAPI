@@ -8,8 +8,11 @@ stages:
   jobs:
   - job: imagebuild
     steps:
-    - script: docker image build -t student:1.0 .
-              docker image tag student:1.0 madhutony/student:1.0
-              docker image push madhutony/student:1.0
-              docker container run -d --name madhu -P madhutony/student:1.0
-              docker container ls
+    - script: |
+        docker image build -t student:1.0 .
+        docker image tag student:1.0 madhutony/student:1.0
+        docker image push madhutony/student:1.0
+        docker image ls
+        docker image pull madhutony/student:1.0
+        docker container run -d --name madhu -P madhutony/student:1.0
+        docker container ls
