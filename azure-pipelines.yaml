@@ -1,8 +1,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: Docker
+pool: Docker
 
 stages:
 - stage: image
